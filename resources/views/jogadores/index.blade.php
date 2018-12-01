@@ -33,6 +33,8 @@
             @endforeach
             </tbody>
         </table>
+        {{ $jogadores->links() }}
+		<br>
         <a href="{{ route('jogadores.create') }}" class="btn-sm btn-primary"><span class="glyphicon glyphicon-plus"></span> Incluir Jogador</a>
     </div>
 @endsection

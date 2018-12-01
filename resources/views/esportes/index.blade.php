@@ -30,7 +30,8 @@
             @endforeach
             </tbody>
         </table>
-        <br>
+        {{ $esportes->links() }}
+		<br>
         <a href="{{ route('esportes.create') }}" class="btn-sm btn-primary"><span class="glyphicon glyphicon-plus"></span> Incluir Esporte</a>
     </div>
 @endsection

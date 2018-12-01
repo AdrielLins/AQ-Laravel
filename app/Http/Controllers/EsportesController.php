@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class EsportesController extends Controller
 {
     public function index(){
-        $esportes = Esporte::orderBy('nome')->paginate(2);
+        $esportes = Esporte::orderBy('nome')->paginate(5);
         return view('esportes.index', ['esportes'=>$esportes]);
     }
 
