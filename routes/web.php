@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home', function () {
+    return view('home');
+});
 
 Route::group(['prefix'=>'esportes', 'where'=>['id'=>'[0-9]+']], function (){
     Route::get('', ['as'=>'esportes', 'uses'=>'EsportesController@index']);
@@ -53,4 +56,3 @@ Route::group(['prefix'=>'agendamentos', 'where'=>['id'=>'[0-9]+']], function (){
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
