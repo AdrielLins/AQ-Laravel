@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class UsersController extends Controller
 {
     public function index(){
-        $users = User::all();
+        $users = User::orderBy('nome')->paginate(5);
         return view('users.index', ['users'=>$users]);
     }
 

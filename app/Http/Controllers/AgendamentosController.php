@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class AgendamentosController extends Controller
 {
     public function index(){
-        $agendamentos = Agendamento::all();
+        $agendamentos = Agendamento::orderBy('horario')->paginate(5);
         return view('agendamentos.index', ['agendamentos'=>$agendamentos]);
     }
 

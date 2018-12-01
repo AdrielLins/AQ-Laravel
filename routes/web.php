@@ -50,3 +50,7 @@ Route::group(['prefix'=>'agendamentos', 'where'=>['id'=>'[0-9]+']], function (){
     Route::get('{id}/edit', ['as'=>'agendamentos.edit', 'uses'=>'AgendamentosController@edit']);
     Route::put('{id}/update', ['as'=>'agendamentos.update', 'uses'=>'AgendamentosController@update']);
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

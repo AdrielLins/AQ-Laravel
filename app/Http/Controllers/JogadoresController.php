@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class JogadoresController extends Controller
 {
     public function index(){
-        $jogadores = Jogador::all();
+        $jogadores = Jogador::orderBy('nome')->paginate(5);
         return view('jogadores.index', ['jogadores'=>$jogadores]);
     }
 
