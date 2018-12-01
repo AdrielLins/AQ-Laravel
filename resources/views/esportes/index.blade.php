@@ -1,9 +1,10 @@
 @extends('app')
-
+@section('table-delete')
+"esportes"
+@endsection
 @section('content')
-    <div class="container">
+    <div class="container">    
         <h1>Esportes</h1>
-
         <table class="table table-striped table-bordered table-hover">
             <thead>
             <tr>
@@ -20,12 +21,16 @@
                     <td>{{$esp->duracao}}</td>
                     <td>{{$esp->valor}}</td>
                     <td>
-                        <a href="{{ route('esportes.edit', ['id'=>$esp->id]) }}" class="btn-sm btn-success">Editar</a>
-                        <a href="{{ route('esportes.destroy', ['id'=>$esp->id]) }}" class="btn-sm btn-danger">Remover</a>
+                        <a href="{{ route('esportes.edit', ['id'=>$esp->id]) }}" 
+                            class="btn-sm btn-success">Editar</a>
+                        <a href="#" onClick="return ConfirmaExclusao({{$esp->id}})" 
+                            class="btn-sm btn-danger">Remover</a>
                     </td>
                 </tr>
             @endforeach
             </tbody>
         </table>
+        <br>
         <a href="{{ route('esportes.create') }}" class="btn-sm btn-primary"><span class="glyphicon glyphicon-plus"></span> Incluir Esporte</a>
     </div>
+@endsection

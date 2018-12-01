@@ -26,8 +26,16 @@ class AgendamentosController extends Controller
     }
 
     public function destroy($id){
-        Agendamento::find($id)->delete();
-        return redirect()->route('agendamentos');
+        try {
+            Agendamento::find($id)->delete();
+            $ret = array('status'=>'ok', 'msg'=>"null");
+        } catch(\Illuminate\Database\QueryException $e) {
+            $ret = array('status'=>'erro', 'msg'=>$e->getMessage());
+        }
+        catch(\PDOException $e) {
+            $ret = array('status'=>'erro', 'msg'=>$e->getMessage());
+        }
+        return $ret;
     }
 
     public function edit($id){

@@ -1,5 +1,7 @@
 @extends('app')
-
+@section('table-delete')
+"jogadores"
+@endsection
 @section('content')
     <div class="container">
         <h1>Jogadores</h1>
@@ -22,8 +24,10 @@
                     <td>{{$jog->sexo}}</td>
                     <td>{{$jog->email}}</td>
                     <td>
-                        <a href="{{ route('jogadores.edit', ['id'=>$jog->id]) }}" class="btn-sm btn-success">Editar</a>
-                        <a href="{{ route('jogadores.destroy', ['id'=>$jog->id]) }}" class="btn-sm btn-danger">Remover</a>
+                        <a href="{{ route('jogadores.edit', ['id'=>$jog->id]) }}" 
+                            class="btn-sm btn-success">Editar</a>
+                            <a href="#" onClick="return ConfirmaExclusao({{$jog->id}})" 
+                            class="btn-sm btn-danger">Remover</a>
                     </td>
                 </tr>
             @endforeach

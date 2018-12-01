@@ -1,5 +1,7 @@
 @extends('app')
-
+@section('table-delete')
+"agendamentos"
+@endsection
 @section('content')
     <div class="container">
         <h1>Agendamentos</h1>
@@ -28,8 +30,10 @@
                     <td>{{$agen->status}}</td>
                     <td>{{$agen->observacoes}}</td>
                     <td>
-                        <a href="{{ route('agendamentos.edit', ['id'=>$agen->id]) }}" class="btn-sm btn-success">Editar</a>
-                        <a href="{{ route('agendamentos.destroy', ['id'=>$agen->id]) }}" class="btn-sm btn-danger">Remover</a>
+                        <a href="{{ route('agendamentos.edit', ['id'=>$agen->id]) }}" 
+                            class="btn-sm btn-success">Editar</a>
+                        <a href="#" onClick="return ConfirmaExclusao({{$agen->id}})" 
+                            class="btn-sm btn-danger">Remover</a>
                     </td>
                 </tr>
             @endforeach

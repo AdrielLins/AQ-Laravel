@@ -26,8 +26,16 @@ class JogadoresController extends Controller
     }
 
     public function destroy($id){
-        Jogador::find($id)->delete();
-        return redirect()->route('jogadores');
+        try {
+            Jogador::find($id)->delete();
+            $ret = array('status'=>'ok', 'msg'=>"null");
+        } catch(\Illuminate\Database\QueryException $e) {
+           $ret = array('status'=>'erro', 'msg'=>$e->getMessage());
+        }
+        catch(\PDOException $e) {
+           $ret = array('status'=>'erro', 'msg'=>$e->getMessage());
+        }
+        return $ret;
     }
 
     public function edit($id){
