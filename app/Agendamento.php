@@ -10,6 +10,7 @@ class Agendamento extends Model
         'jogador_id',
         'usuario_id',
         'esporte_id',
+        'quadra_id',
         'data',
         'horario',
         'valor',
@@ -26,5 +27,8 @@ class Agendamento extends Model
 
     public function esporte(){
         return $this->belongsTo('App\Esporte');
+    }
+    public function quadra(){
+        return $this->belongsTo('App\Quadra');
     }
 }

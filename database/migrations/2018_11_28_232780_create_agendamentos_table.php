@@ -19,6 +19,8 @@ class CreateAgendamentosTable extends Migration
             $table->foreign('usuario_id')->references('id')->on('users');
             $table->integer('esporte_id')->unsigned();
             $table->foreign('esporte_id')->references('id')->on('esportes');
+            $table->integer('quadra_id')->unsigned();
+            $table->foreign('quadra_id')->references('id')->on('quadras');
             $table->integer('jogador_id')->unsigned();
             $table->foreign('jogador_id')->references('id')->on('jogadors');
             $table->date('data');

@@ -27,6 +27,7 @@ class AgendamentoRequest extends FormRequest
             'jogador_id' => 'required',
             'usuario_id' => 'required',
             'esporte_id' => 'required',
+            'quadra_id' => 'required',
             'data' => 'required|date',
             'horario' => 'required',
             'status' => 'required',

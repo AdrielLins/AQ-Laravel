@@ -11,20 +11,14 @@
             <tr>
                 <th>Nome</th>
                 <th>Email</th>
-                <th>Telefone</th>
-                <th>Sexo</th>
-                <th>Data Criação</th>
                 <th>Ação</th>
             </tr>
             </thead>
             <tbody>
             @foreach($users as $usr)
                 <tr>
-                    <td>{{$usr->nome}}</td>
+                    <td>{{$usr->name}}</td>
                     <td>{{$usr->email}}</td>
-                    <td>{{$usr->telefone}}</td>
-                    <td>{{$usr->sexo}}</td>
-                    <td>{{$usr->dataCriacao}}</td>
                     <td>
                         <a href="{{ route('users.edit', ['id'=>$usr->id]) }}" 
                             class="btn-sm btn-success">Editar</a>

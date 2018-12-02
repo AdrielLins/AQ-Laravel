@@ -70,7 +70,7 @@
         </div>
 
         <div class="form-group">
-            {!! Form::label('estado', 'Estado:') !!}
+            {!! Form::label('estado', 'Sigla do Estado:') !!}
             {!! Form::text('estado', null, ['class'=>'form-control']) !!}
         </div>
 

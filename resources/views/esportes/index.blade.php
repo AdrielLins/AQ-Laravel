@@ -19,7 +19,7 @@
                 <tr>
                     <td>{{$esp->nome}}</td>
                     <td>{{$esp->duracao}}</td>
-                    <td>{{$esp->valor}}</td>
+                    <td>R$: {{$esp->valor}}</td>
                     <td>
                         <a href="{{ route('esportes.edit', ['id'=>$esp->id]) }}" 
                             class="btn-sm btn-success">Editar</a>

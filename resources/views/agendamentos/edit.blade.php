@@ -21,12 +21,17 @@
 
         <div class="form-group">
             {!! Form::label('usuario_id', 'Funcionário que realizou o agendamento:') !!}
-            {{ Form::select('usuario_id', \App\User::orderBy('nome')->pluck('nome','id')->toArray(), $agendamento->usuario_id, ['class'=>'form-control']) }}
+            {{ Form::select('usuario_id', \App\User::orderBy('name')->pluck('name','id')->toArray(), $agendamento->usuario_id, ['class'=>'form-control']) }}
         </div>
 
         <div class="form-group">
             {!! Form::label('esporte_id', 'Esporte:') !!}
-            {{ Form::select('esporte_id', \App\Esporte::orderBy('nome')->pluck('nome','id')->toArray(), $agendamento->procedimento_id, ['class'=>'form-control']) }}
+            {{ Form::select('esporte_id', \App\Esporte::orderBy('nome')->pluck('nome','id')->toArray(), $agendamento->esporte_id, ['class'=>'form-control']) }}
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('quadra_id', 'Quadra:') !!}
+            {{ Form::select('quadra_id', \App\Quadra::orderBy('nome')->pluck('nome','id')->toArray(), $agendamento->quadra_id, ['class'=>'form-control']) }}
         </div>
 
         <div class="form-group">
@@ -44,7 +49,7 @@
             {!! Form::select('status', array('Agendado' => 'Agendado',
                                                   'Cancelado' => 'Cancelado',
                                                   'Pago' => 'Pago',
-                                                  'Não compareceu' => 'Não compareceu',
+                                                  'Não compareceu' => 'Não compareceu'),
                                                   $agendamento->status, ['class'=>'form-control']) !!}
         </div>
 

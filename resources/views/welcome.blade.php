@@ -71,8 +71,8 @@
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
+                        <a href="{{ url('/login') }}">Entrar</a>
+                        <a href="{{ url('/register') }}">Cadastre-se</a>
                     @endif
                 </div>
             @endif
@@ -83,10 +83,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{ url('agendamentos') }}">Agendamentos</a>
-                    <a href="{{ url('jogadores') }}">Jogadores</a>
-                    <a href="{{ url('funcionarios') }}">Funcionarios</a>
-                    <a href="{{ url('esportes') }}">Esportes</a>
+                    <a href="#">Por favor, faça login acima para continuar!</a>
                 </div>
             </div>
         </div>

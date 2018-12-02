@@ -12,6 +12,7 @@
                 <th>Jogador</th>
                 <th>Funcionário que agendou</th>
                 <th>Esporte</th>
+                <th>Quadra</th>
                 <th>Data</th>
                 <th>Horário</th>
                 <th>Status</th>
@@ -23,8 +24,9 @@
             @foreach($agendamentos as $agen)
                 <tr>
                     <td>{{$agen->jogador->nome}}</td>
-                    <td>{{$agen->usuario->nome}}</td>
+                    <td>{{$agen->usuario->name}}</td>
                     <td>{{$agen->esporte->nome}}</td>
+                    <td>{{$agen->quadra->nome}}</td>
                     <td>{{$agen->data}}</td>
                     <td>{{$agen->horario}}</td>
                     <td>{{$agen->status}}</td>

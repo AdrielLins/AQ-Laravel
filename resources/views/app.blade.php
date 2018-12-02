@@ -44,7 +44,7 @@
                 <li><a href="{{ url('jogadores') }}">Jogadores</a></li>
             </ul>
             <ul class="nav navbar-nav">
-                <li><a href="{{ url('users') }}">Funcionários</a></li>
+                <li><a href="{{ url('quadras') }}">Quadras</a></li>
             </ul>
             <ul class="nav navbar-nav">
                 <li><a href="{{ url('esportes') }}">Esportes</a></li>
