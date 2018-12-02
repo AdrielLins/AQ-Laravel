@@ -9,8 +9,14 @@ use App\Http\Controllers\Controller;
 
 class JogadoresController extends Controller
 {
-    public function index(){
-        $jogadores = Jogador::orderBy('nome')->paginate(5);
+    public function index(Request $filtro){
+        $filtragem = $filtro->get('filtragem');
+        if($filtragem == null)
+            $jogadores = Jogador::orderBy('nome')->paginate(5);
+        else
+            $jogadores = Jogador::where('nome','like','%'.$filtragem.'%')
+            ->orderBy("nome")->paginate(20);
+
         return view('jogadores.index', ['jogadores'=>$jogadores]);
     }
 

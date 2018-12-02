@@ -6,6 +6,20 @@
     <div class="container">
         <h1>Jogadores</h1>
 
+        {!! Form::open(['name'=>'form_name','route'=>'jogadores']) !!}
+        <div class="sidebar-form">
+            <div class="input-group input-group-lg">
+                <input type="text" name="filtragem" class="form-control"
+                style="width:100% !important;" placeholder="Pesquisa...">
+                <span class="input-group-bth">
+                    <button type="submit" name="search" id="search-btn" class="btn btn-default">
+                        <i class="fa fa-search">Buscar</i>
+                    </button>
+                </span>
+            </div>
+        </div>
+        {!! Form::close() !!}
+
         <table class="table table-striped table-bordered table-hover">
             <thead>
             <tr>

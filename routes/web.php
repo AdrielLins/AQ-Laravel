@@ -29,7 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('{id}/edit', ['as'=>'esportes.edit', 'uses'=>'EsportesController@edit']);
         Route::put('{id}/update', ['as'=>'esportes.update', 'uses'=>'EsportesController@update']);
     });
-    
+
     Route::group(['prefix'=>'quadras', 'where'=>['id'=>'[0-9]+']], function (){
         Route::get('', ['as'=>'quadras', 'uses'=>'QuadrasController@index']);
         Route::get('create', ['as'=>'quadras.create', 'uses'=>'QuadrasController@create']);
@@ -40,7 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
     Route::group(['prefix'=>'jogadores', 'where'=>['id'=>'[0-9]+']], function (){
-        Route::get('', ['as'=>'jogadores', 'uses'=>'JogadoresController@index']);
+        Route::any('', ['as'=>'jogadores', 'uses'=>'JogadoresController@index']);
         Route::get('create', ['as'=>'jogadores.create', 'uses'=>'JogadoresController@create']);
         Route::post('store', ['as'=>'jogadores.store', 'uses'=>'JogadoresController@store']);
         Route::get('{id}/destroy', ['as'=>'jogadores.destroy', 'uses'=>'JogadoresController@destroy']);
